@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #86A789, #D2E3C8);
+    color: #333;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #4F6F52, #739072);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo svg {
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 30px; /* Ukuran huruf lebih besar untuk menonjol */
+    color: #F9E8D9; /* Warna teks yang mencolok */
+    font-family: 'Arial', sans-serif; /* Ganti font dengan yang lebih modern */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Bayangan teks untuk efek kedalaman */
+    animation: blink 1s infinite; /* Efek kedap-kedip */
+    border: 3px solid #C3E2C2; /* Border dengan warna yang sama */
+    border-radius: 10px; /* Membuat sudut border lebih halus */
+    padding: 10px; /* Memberi jarak antara teks dan border */
+    background: rgba(255, 255, 255, 0.8); /* Latar belakang dengan sedikit transparansi */
+    box-shadow: 0 0 15px rgba(255, 87, 51, 0.5); /* Efek nyala pada border */
+    max-width: 100%; /* Responsif */
+    text-align: center; /* Pusatkan teks */
+}
+
+/* Animasi kedap-kedip */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1; /* Teks terlihat */
+    }
+    50% {
+        opacity: 0.5; /* Teks setengah transparan */
+    }
+}
+
+/* Responsivitas untuk ukuran layar kecil */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px; /* Ukuran huruf lebih kecil di layar kecil */
+        padding: 8px; /* Mengurangi padding */
+    }
+}
+
+button.toggle-dark-mode {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+button.toggle-dark-mode:hover {
+    transform: scale(1.1); /* Scale on hover */
+}
+
+main {
+    padding: 20px;
+}
+
+.form-section, .summary-section, .chart-section {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.summary-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.summary-box div {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.chart-section {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #D2E3C8, #86A789);
+    border-radius: 8px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #333;
+    color: #f0f0f0;
+}
+
+.dark-mode header {
+    background: #444; /* Darker background for header in dark mode */
+    border: 1px solid #666; /* Dark border */
+}
+
+.dark-mode .logo svg {
+    fill: #f0f0f0; /* Change logo color in dark mode */
+}
+
+.dark-mode h1 {
+    color: #f0f0f0; /* Text color for header in dark mode */
+}
+
+.dark-mode button.toggle-dark-mode:hover {
+    transform: scale(1.1); /* Scale on hover in dark mode */
+}
+
+/* Dark mode for forms and sections */
+.dark-mode .form-section, .dark-mode .summary-section, .dark-mode .chart-section {
+    background: #444; /* Background for sections in dark mode */
+    border: 1px solid #666; /* Border for sections in dark mode */
+}
+
+.dark-mode form input, .dark-mode form select {
+    border: 1px solid #888;
+    background: #555;
+    color: #fff;
+}
+
+.dark-mode form button {
+    background-color: #5cb85c;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    header, main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .summary-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .summary-box div {
+        margin-bottom: 10px;
+    }
+}

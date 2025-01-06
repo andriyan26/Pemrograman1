@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard Admin</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showSection('home')">Beranda</a></li>
+                    <li><a href="#" onclick="showSection('add-post')">Tambah Postingan</a></li>
+                    <li><a href="#" onclick="showSection('manage-comments')">Kelola Komentar</a></li>
+                    <li><a href="#" onclick="showSection('manage-posts')">Kelola Postingan</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="home" class="active">
+                <h2>Statistik Postingan</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <h3>Jumlah Postingan</h3>
+                        <p id="total-posts">0</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Jumlah Komentar</h3>
+                        <p id="total-comments">0</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Pengunjung Bulan Ini</h3>
+                        <p id="total-visitors">0</p>
+                    </div>
+                </div>
+                <h2>Postingan Terbaru</h2>
+                <div id="recent-posts"></div>
+            </section>
+
+            <section id="add-post">
+                <h2>Tambah Postingan</h2>
+                <input type="text" id="post-title" placeholder="Judul Postingan">
+                <select id="image-selector"></select>
+                <button onclick="addPost()">Tambahkan Postingan</button>
+            </section>
+
+            <section id="manage-comments">
+                <h2>Kelola Komentar</h2>
+                <div id="comments-list"></div>
+            </section>
+
+            <section id="manage-posts">
+                <h2>Kelola Postingan</h2>
+                <div id="posts-list"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('hidden');
+        }
+
+        function highlightMenu(menuItemId) {
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => item.classList.remove('bg-blue-500', 'text-white'));
+            const selectedItem = document.getElementById(menuItemId);
+            selectedItem.classList.add('bg-blue-500', 'text-white');
+        }
+
+        function showPage(pageId, menuItemId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+            highlightMenu(menuItemId);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('penggunaPage', 'penggunaMenu'); // Show dashboard by default
+        });
+    </script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white min-h-screen shadow-md flex flex-col justify-between" id="sidebar">
+            <div>
+                <div style="background-color: white; padding: 16px; display: flex; align-items: center;">
+                    <img alt="University Logo" class="w-10 h-10 mr-2" src="gambar/Unpam.png" />
+                    <h1 class="text-lg font-bold" style="color: blue;">UNIVERSITAS PAMULANG</h1>
+                </div> 
+                <div class="p-4">
+                    <!-- Avatar and welcome message -->
+                    <div class="flex items-center mb-4">
+                        <img alt="User Avatar" class="w-10 h-10 rounded-full mr-2" src="gambar/Foto4.jpg" />
+                        <div>
+                            <p class="font-semibold">Welcome, Andrian</p>
+                            <p class="text-sm text-gray-500">Administrator</p>
+                        </div>
+                    </div>
+                    <!-- Navigation menu -->
+                    <nav class="bg-white p-4 rounded-lg shadow-lg">
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="dashboardMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="dashboard.html" onclick="showPage('dashboardPage', 'dashboardMenu')">
+                                    <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                    
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU KARYAWAN</p>
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="karyawanMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="karyawan.html" onclick="showPage('karyawanPage', 'karyawanMenu')">
+                                    <i class="fas fa-users mr-2"></i> Karyawan
+                                </a>
+                            </li>
+                            <li>
+                                <a id="jabatanMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="jabatan.html" onclick="showPage('jabatanPage', 'jabatanMenu')">
+                                    <i class="fas fa-briefcase mr-2"></i> Jabatan
+                                </a>
+                            </li>
+                            <li>
+                                <a id="divisiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="divisi.html" onclick="showPage('divisiPage', 'divisiMenu')">
+                                    <i class="fas fa-building mr-2"></i> Divisi
+                                </a>
+                            </li>
+                        </ul>
+                    
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU ABSENSI</p>
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="absensiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="absensi.html" onclick="showPage('absensiPage', 'absensiMenu')">
+                                    <i class="fas fa-users mr-2"></i> Absensi
+                                </a>
+                            </li>
+                            <li>
+                                <a id="izinMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="izin.html" onclick="showPage('izinPage', 'izinMenu')">
+                                    <i class="fas fa-briefcase mr-2"></i> Izin
+                                </a>
+                            </li>
+                            <li>
+                                <a id="lemburMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="lembur.html" onclick="showPage('lemburPage', 'lemburMenu')">
+                                    <i class="fas fa-building mr-2"></i> Lembur
+                                </a>
+                            </li>
+                        </ul>
+                    
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU PENGGAJIAN</p>
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="slipgajiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="slipgaji.html" onclick="showPage('slipgajiPage', 'slipgajiMenu')">
+                                    <i class="fas fa-users mr-2"></i> Slip Gaji
+                                </a>
+                            </li>
+                            <li>
+                                <a id="cetakgajiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="cetakgaji.html" onclick="showPage('cetakgajiPage', 'cetakgajiMenu')">
+                                    <i class="fas fa-briefcase mr-2"></i> Cetak Gaji
+                                </a>
+                            </li>
+                        </ul>
+                    
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU LAPORAN</p>
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="cetaklaporanMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="cetaklaporan.html" onclick="showPage('cetaklaporanPage', 'cetaklaporanMenu')">
+                                    <i class="fas fa-users mr-2"></i> Cetak Laporan
+                                </a>
+                            </li>
+                        </ul>
+                    
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU ADMIN</p>
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="penggunaMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="#" onclick="showPage('penggunaPage', 'penggunaMenu')">
+                                    <i class="fas fa-users mr-2"></i> Pengguna
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div> 
+            <div class="p-4">
+                <button class="w-full bg-red-500 text-white p-2 rounded" onclick="window.location.href='keluar.html';">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                </button>
+            </div>
+        </div>
+       <!-- Main Content -->
+       <div class="flex-1">
+        <!-- Navbar -->
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <button class="bg-blue-500 text-white p-2 rounded" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="flex items-center">
+                <p class="mr-4">Welcome, Andrian</p>
+                <img alt="User Avatar" class="w-10 h-10 rounded-full" height="50"
+                     src="gambar/Foto4.jpg" width="50" />
+            </div>
+        </div>
+
+                         <!-- Filter untuk Entries dan Search -->
+                        <h2 style="width: 100%; padding: 10px; margin-top: 0px; background: linear-gradient(135deg, #efeff0, #f6f7f8); color: blue; text-align: left; font-size: 2.1em; font-weight: bold; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);">
+                        Data Pengguna
+                        </h2>
+                         <!-- Daftar Pengguna -->
+                         <table style="width: 100%; max-width: 800px; margin: left; border-collapse: collapse; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); border-radius: 8px;">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #0736b9, #1507da); color: #fff;">
+                                    <th style="padding: 12px; text-align: left; font-size: 1em; font-weight: bold;">No</th>
+                                    <th style="padding: 12px; text-align: left; font-size: 1em; font-weight: bold;">Nama Lengkap</th>
+                                    <th style="padding: 12px; text-align: left; font-size: 1em; font-weight: bold;">Email</th>
+                                    <th style="padding: 12px; text-align: left; font-size: 1em; font-weight: bold;">Jabatan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #e1e791;">
+                                    <td style="padding: 12px; color: #333;">1</td>
+                                    <td style="padding: 12px; color: #333;">Andrian</td>
+                                    <td style="padding: 12px; color: #555;">andrian@example.com</td>
+                                    <td style="padding: 12px; color: #333;">Manager</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; color: #333;">2</td>
+                                    <td style="padding: 12px; color: #333;">Budi Santoso</td>
+                                    <td style="padding: 12px; color: #555;">budi@example.com</td>
+                                    <td style="padding: 12px; color: #333;">Staff</td>
+                                </tr>
+                                <tr style="background-color: #e1e791;">
+                                    <td style="padding: 12px; color: #333;">3</td>
+                                    <td style="padding: 12px; color: #333;">Siti Aisyah</td>
+                                    <td style="padding: 12px; color: #555;">siti@example.com</td>
+                                    <td style="padding: 12px; color: #333;">Supervisor</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; color: #333;">4</td>
+                                    <td style="padding: 12px; color: #333;">Rahmat Hidayat</td>
+                                    <td style="padding: 12px; color: #555;">rahmat@example.com</td>
+                                    <td style="padding: 12px; color: #333;">Assistant</td>
+                                </tr>
+                                <tr style="background-color: #e1e791;">
+                                    <td style="padding: 12px; color: #333;">5</td>
+                                    <td style="padding: 12px; color: #333;">Ayu Lestari</td>
+                                    <td style="padding: 12px; color: #555;">ayu@example.com</td>
+                                    <td style="padding: 12px; color: #333;">Manager</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; color: #333;">6</td>
+                                    <td style="padding: 12px; color: #333;">Ridwan Pratama</td>
+                                    <td style="padding: 12px; color: #555;">ridwan@example.com</td>
+                                    <td style="padding: 12px; color: #333;">Staff</td>
+                                </tr>
+                                <tr style="background-color: #e1e791;">
+                                    <td style="padding: 12px; color: #333;">7</td>
+                                    <td style="padding: 12px; color: #333;">Hana Permata</td>
+                                    <td style="padding: 12px; color: #555;">hana@example.com</td>
+                                    <td style="padding: 12px; color: #333;">Supervisor</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; color: #333;">8</td>
+                                    <td style="padding: 12px; color: #333;">Rizki Ananda</td>
+                                    <td style="padding: 12px; color: #555;">rizki@example.com</td>
+                                    <td style="padding: 12px; color: #333;">Manager</td>
+                                </tr>
+                                <tr style="background-color: #e1e791;">
+                                    <td style="padding: 12px; color: #333;">9</td>
+                                    <td style="padding: 12px; color: #333;">Wulan Puspita</td>
+                                    <td style="padding: 12px; color: #555;">wulan@example.com</td>
+                                    <td style="padding: 12px; color: #333;">Assistant</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; color: #333;">10</td>
+                                    <td style="padding: 12px; color: #333;">Fajar Nugraha</td>
+                                    <td style="padding: 12px; color: #555;">fajar@example.com</td>
+                                    <td style="padding: 12px; color: #333;">Staff</td>
+                                </tr>
+                            </tbody>
+                        </table> 
+    
+                        <!-- Data Pengunjung -->
+                        <div class="visitor-data">
+                            <div class="icon-container" style="margin-right: 15px; flex-shrink: 0;">
+                                <img src="gambar/logo-removebg-preview (1).png" alt="Icon Pengunjung" style="width: 30px; height: auto;" />
+                            </div>                            
+                            <div class="text-container">
+                                <span class="animated-text" id="animatedText">Jumlah Kunjungan : </span>
+                                <strong class="animated-number" id="animatedNumber">587</strong>
+                            </div>
+                        </div>
+
+                        <style>
+                            .visitor-data {
+                                background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+                                padding: 20px;
+                                margin-top: 30px;
+                                border-radius: 8px;
+                                margin: 20px left;
+                                max-width: 800px;
+                                display: flex;
+                                align-items: center;
+                                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                                font-family: Arial, sans-serif;
+                                text-align: left; /* Align text to the left */
+                                overflow: hidden; /* Prevent overflow */
+                            }
+
+                            .icon-container {
+                                margin-right: 15px;
+                                flex-shrink: 0;
+                                animation: bounce 1s infinite;
+                            }
+
+                            .text-container {
+                                color: #333;
+                            }
+
+                            .animated-text, .animated-number {
+                                display: inline-block;
+                                opacity: 0; /* Hide initially */
+                                animation: fadeIn 0.5s forwards; /* Fade in effect */
+                            }
+
+                            @keyframes bounce {
+                                0%, 100% {
+                                    transform: translateY(0);
+                                }
+                                50% {
+                                    transform: translateY(-10px);
+                                }
+                            }
+
+                            @keyframes fadeIn {
+                                0% {
+                                    opacity: 0;
+                                    transform: translateY(10px);
+                                }
+                                100% {
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
+                            }
+
+                            /* Responsive styles */
+                            @media (max-width: 600px) {
+                                .visitor-data {
+                                    flex-direction: column; /* Stack elements on smaller screens */
+                                    align-items: flex-start; /* Align items to the start */
+                                    text-align: left; /* Ensure text is left-aligned */
+                                }
+
+                                .icon-container {
+                                    margin-bottom: 10px; /* Add space below the icon when stacked */
+                                }
+                            }
+                        </style>
+
+                        <script>
+                            const texts = ["Jumlah Kunjungan:", "Total Pengunjung:", "Kunjungan Hari Ini:"];
+                            let currentIndex = 0;
+
+                            function cycleText() {
+                                const animatedText = document.getElementById('animatedText');
+                                const animatedNumber = document.getElementById('animatedNumber');
+
+                                // Set the text and number based on the current index
+                                animatedText.textContent = texts[currentIndex];
+                                
+                                // Animate the text
+                                animatedText.style.opacity = 1;
+                                setTimeout(() => {
+                                    animatedText.style.opacity = 0; // Fade out the text
+                                }, 2000); // Duration for text to stay visible
+
+                                // Move to the next index
+                                currentIndex = (currentIndex + 1) % texts.length;
+
+                                // Set the next animation after a delay
+                                setTimeout(cycleText, 3000); // Wait for 3 seconds before next text
+                            }
+
+                            // Start cycling through text
+                            cycleText();
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>            
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #3B1E54, #9B7EBD);
+            color: #ffffff;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .card {
+            background-color: #1e293b;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .button {
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #5f82d2;
+        }
+
+        .icon-button {
+            width: 35px;
+            height: 35px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .icon-button:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+
+            .sidebar-toggle {
+                display: block;
+            }
+
+            .sidebar-mobile {
+                display: block;
+            }
+        }
+
+        canvas {
+            max-width: 100% !important;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+
+    <div class="flex flex-col lg:flex-row">
+        <aside class="bg-gray-800 w-64 min-h-screen p-5 shadow-lg sidebar">
+            <div class="text-center mb-8">
+                <img src="data:image/png;base64,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" alt="Admin" class="w-20 h-20 mx-auto rounded-full border-4 border-white">
+                <h1 class="text-3xl font-extrabold mt-4 text-glow">Panel Admin</h1>
+                <p class="text-gray-400">Selamat datang, Andrian! 🌟</p>
+            </div>
+
+            <nav class="mt-10 space-y-4">
+                <a href="#" class="block text-lg hover:text-indigo-400 transition">🏠 Dashboard</a>
+                <a href="#statistics" class="block text-lg hover:text-green-400 transition">📊 Statistik</a>
+                <a href="#posts" class="block text-lg hover:text-yellow-400 transition">📝 Postingan</a>
+                <a href="#comments" class="block text-lg hover:text-pink-400 transition">💬 Komentar</a>
+            </nav>
+        </aside>
+
+        <div class="flex-1 p-8 lg:ml-64">
+            <header class="flex justify-between items-center mb-8">
+                <h1 class="text-4xl font-extrabold text-glow">Dashboard Admin</h1>
+                <button class="button bg-purple-600 px-4 py-2 rounded">✨ Tambah Postingan</button>
+            </header>
+
+            <section id="statistics" class="mt-6">
+                <h2 class="text-3xl font-bold mb-6">Statistik Bulanan 📈</h2>
+                <div class="w-full overflow-x-auto">
+                    <canvas id="statChart" class="w-full max-w-3xl mx-auto"></canvas>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 text-center">
+                    <div class="card">
+                        <h3 class="text-2xl font-bold">Total Pengunjung</h3>
+                        <p id="total-visitor" class="text-4xl font-extrabold mt-2">1200</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-2xl font-bold">Total Komentar</h3>
+                        <p id="total-comments" class="text-4xl font-extrabold mt-2">350</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-2xl font-bold">Total Postingan</h3>
+                        <p id="total-posts" class="text-4xl font-extrabold mt-2">42</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="posts" class="mt-12">
+                <h2 class="text-3xl font-bold mb-6">Daftar Postingan 📝</h2>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Judul Postingan 1</h3>
+                        <div class="space-x-2">
+                            <button class="icon-button">
+                                <img src="https://via.placeholder.com/35/4CAF50/FFFFFF?text=✏️" alt="Edit" title="Edit">
+                            </button>
+                            <button class="icon-button">
+                                <img src="https://via.placeholder.com/35/F44336/FFFFFF?text=🗑️" alt="Hapus" title="Hapus">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Judul Postingan 2</h3>
+                        <div class="space-x-2">
+                            <button class="icon-button">
+                                <img src="https://via.placeholder.com/35/4CAF50/FFFFFF?text=✏️" alt="Edit" title="Edit">
+                            </button>
+                            <button class="icon-button">
+                                <img src="https://via.placeholder.com/35/F44336/FFFFFF?text=🗑️" alt="Hapus" title="Hapus">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Judul Postingan 3</h3>
+                        <div class="space-x-2">
+                            <button class="icon-button">
+                                <img src="https://via.placeholder.com/35/4CAF50/FFFFFF?text=✏️" alt="Edit" title="Edit">
+                            </button>
+                            <button class="icon-button">
+                                <img src="https://via.placeholder.com/35/F44336/FFFFFF?text=🗑️" alt="Hapus" title="Hapus">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="comments" class="mt-12">
+                <h2 class="text-3xl font-bold mb-6">Komentar 💬</h2>
+                <div id="comment-section" class="bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
+                    <div id="comments-list">
+                        <p class="text-gray-400">Belum ada komentar. Ayo beri komentar pertama Anda! ✨</p>
+                    </div>
+
+                    <form id="comment-form" class="mt-4">
+                        <textarea id="comment-input" class="w-full p-4 rounded-md bg-gray-900 text-white" rows="3" placeholder="Tulis komentar..."></textarea>
+                        <button type="submit" class="button bg-green-500 px-4 py-2 mt-2 rounded w-full">Kirim Komentar</button>
+                    </form>
+                </div>
+            </section>
+
+            <footer class="mt-12 text-center text-gray-400">
+                <p>&copy;@Andrian</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('statChart').getContext('2d');
+        const postData = [5, 10, 8, 6, 7, 9, 12, 15, 8, 10, 11, 13]; // Data untuk jumlah postingan
+        const commentData = [3, 6, 4, 5, 7, 8, 9, 11, 6, 5, 9, 12]; // Data untuk jumlah komentar
+        const visitorData = [200, 300, 250, 400, 450, 600, 500, 700, 800, 900, 1100, 1200]; // Data untuk jumlah pengunjung
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [
+                    {
+                        label: 'Jumlah Postingan',
+                        data: postData,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2,
+                        fill: true
+                    },
+                    {
+                        label: 'Jumlah Komentar',
+                        data: commentData,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderWidth: 2,
+                        fill: true
+                    },
+                    {
+                        label: 'Jumlah Pengunjung',
+                        data: visitorData,
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderWidth: 2,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#ffffff'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ffffff'
+                        }
+                    }
+                }
+            }
+        });
+
+        const commentForm = document.getElementById('comment-form');
+        const commentInput = document.getElementById('comment-input');
+        const commentsList = document.getElementById('comments-list');
+
+        commentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newComment = document.createElement('div');
+            newComment.classList.add('border-b', 'pb-2', 'mb-2', 'text-gray-300');
+            newComment.innerText = commentInput.value;
+            commentsList.appendChild(newComment);
+            commentInput.value = '';
+        });
+    </script>
+</body>
+
+</html>

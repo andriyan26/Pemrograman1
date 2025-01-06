@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #7077A1 0%, #F6B17A 100%);
+    color: #333;
+    line-height: 1.6; /* Meningkatkan jarak antar baris */
+}
+
+header {
+    background: linear-gradient(135deg, #2D3250, #424769);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1; /* Tidak transparan */
+    }
+    50% {
+        opacity: 0; /* Transparan */
+    }
+}
+
+@keyframes changeColor {
+    0% {
+        color: red; /* Warna awal */
+    }
+    25% {
+        color: blue; /* Warna kedua */
+    }
+    50% {
+        color: green; /* Warna ketiga */
+    }
+    75% {
+        color: orange; /* Warna keempat */
+    }
+    100% {
+        color: purple; /* Warna akhir */
+    }
+}
+
+h1 {
+    font-size: 2.5rem; /* Ukuran font judul */
+    margin-bottom: 10px;
+    animation: flicker 1s infinite, changeColor 4s infinite; /* Menambahkan animasi */
+}
+
+/* Responsif untuk ukuran layar kecil */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Ukuran font lebih kecil */
+    }
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 70%;
+    border: none; /* Menghilangkan border default */
+    border-radius: 25px; /* Membuat sudut lebih bulat */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan dasar */
+    font-size: 1rem; /* Ukuran font input */
+    background: linear-gradient(90deg, #ffffff, #f0f8ff); /* Gradien latar belakang */
+    transition: box-shadow 0.3s ease, background 0.3s ease; /* Transisi halus */
+}
+
+/* Ketika input mendapat fokus */
+input[type="text"]:focus {
+    background: linear-gradient(90deg, #e0f7fa, #b2ebf2); /* Gradien saat fokus */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.5); /* Bayangan lebih menonjol */
+    outline: none; /* Menghilangkan outline default */
+}
+
+/* Efek animasi pada teks saat mengetik */
+input[type="text"]::placeholder {
+    color: #007BFF; /* Warna placeholder */
+    opacity: 0.7; /* Opacity placeholder */
+    transition: color 0.3s ease; /* Transisi warna placeholder */
+}
+
+/* Ganti warna placeholder saat fokus */
+input[type="text"]:focus::placeholder {
+    color: #0056b3; /* Warna placeholder saat fokus */
+    opacity: 0.5; /* Opacity lebih rendah saat fokus */
+}
+button {
+    padding: 12px 20px; /* Ukuran padding yang lebih besar */
+    margin: 10px;
+    border: none;
+    border-radius: 25px; /* Sudut yang lebih bulat */
+    background: linear-gradient(135deg, #3700b3, #6200ea); /* Gradien latar belakang */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, filter 0.3s; /* Transisi tambahan */
+    font-size: 1rem; /* Ukuran font tombol */
+    width: auto; /* Lebar otomatis untuk responsivitas */
+    min-width: 100px; /* Lebar minimum */
+}
+
+button {
+    padding: 12px 20px; /* Ukuran padding yang lebih besar */
+    margin: 10px;
+    border: none;
+    border-radius: 25px; /* Sudut yang lebih bulat */
+    background: linear-gradient(135deg, #ff6a00, #ee0979); /* Gradien oranye dan pink */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, filter 0.3s; /* Transisi tambahan */
+    font-size: 1rem; /* Ukuran font tombol */
+    width: auto; /* Lebar otomatis untuk responsivitas */
+    min-width: 100px; /* Lebar minimum */
+}
+
+button {
+    padding: 12px 20px; /* Ukuran padding yang lebih besar */
+    margin: 10px;
+    border: none;
+    border-radius: 25px; /* Sudut yang lebih bulat */
+    background: linear-gradient(135deg, #ff0080, #ff8c00); /* Gradien pink ke oranye cerah */
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s, filter 0.3s; /* Transisi tambahan */
+    font-size: 1rem; /* Ukuran font tombol */
+    width: auto; /* Lebar otomatis untuk responsivitas */
+    min-width: 100px; /* Lebar minimum */
+}
+
+button {
+    padding: 12px 20px; /* Ukuran padding yang lebih besar */
+    margin: 10px;
+    border: none;
+    border-radius: 25px; /* Sudut yang lebih bulat */
+    background: linear-gradient(135deg, #ff0080, #ff8c00); /* Gradien pink ke oranye cerah */
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s, filter 0.3s; /* Transisi tambahan */
+    font-size: 1rem; /* Ukuran font tombol */
+    width: auto; /* Lebar otomatis untuk responsivitas */
+    min-width: 100px; /* Lebar minimum */
+}
+
+/* Efek hover */
+button:hover {
+    background: linear-gradient(135deg, #ff8c00, #ff0080); /* Ganti urutan gradien saat hover */
+    transform: translateY(-3px) scale(1.05); /* Efek angkat dan sedikit memperbesar saat hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Bayangan lebih dramatis */
+    filter: brightness(1.1); /* Mencerahkan warna saat hover */
+}
+
+/* Efek fokus untuk aksesibilitas */
+button:focus {
+    outline: none; /* Menghilangkan outline default */
+    box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.5); /* Bayangan fokus untuk aksesibilitas */
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Jarak antar film */
+    padding: 20px;
+}
+
+.movie {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: white; /* Background film */
+    width: calc(25% - 20px); /* Lebar tetap agar responsif, 4 film dalam 1 baris */
+    min-width: 220px; /* Minimum lebar agar tetap responsif */
+    border: 2px solid transparent; /* Border awal transparan */
+    background-clip: padding-box; /* Memastikan border tidak tumpang tindih dengan background */
+    display: flex;
+    flex-direction: column; /* Menyusun elemen film secara vertikal */
+    align-items: center; /* Pusatkan elemen di dalam film */
+}
+
+.movie:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4); /* Menambah bayangan saat hover */
+    border: 2px solid #6200ea; /* Border saat hover */
+    background-color: rgba(255, 255, 255, 0.9); /* Sedikit transparansi */
+}
+
+.movie img {
+    width: 100%;
+    height: 300px; /* Mengatur tinggi tetap untuk semua gambar */
+    object-fit: cover; /* Menyesuaikan gambar agar terpotong jika tidak sesuai rasio */
+    border-radius: 15px 15px 0 0; /* Membulatkan hanya bagian atas */
+    display: block; /* Memastikan gambar tidak ada jarak di bawah */
+    transition: transform 0.3s;
+}
+
+.movie img:hover {
+    transform: scale(1.1); /* Efek zoom pada gambar saat hover */
+}
+
+.movie h3 {
+    text-align: center;
+    margin: 10px 0;
+    color: #6200ea; /* Warna judul film */
+    font-size: 1.5rem; /* Ukuran font judul film */
+}
+
+.movie p {
+    padding: 0 10px;
+    text-align: center;
+    color: #555; /* Warna deskripsi film */
+    font-size: 0.9rem; /* Ukuran font deskripsi film */
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    width: 100%; /* Pastikan tombol mengisi lebar film */
+}
+
+.trailer-btn, .watch-btn {
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    flex: 1; /* Mengisi ruang */
+    margin: 0 5px;
+    transition: transform 0.2s; /* Efek transisi saat hover */
+    font-size: 0.9rem; /* Ukuran font tombol */
+}
+
+.trailer-btn {
+    background-color: red; /* Warna merah untuk trailer */
+}
+
+.watch-btn {
+    background-color: blue; /* Warna biru untuk nonton */
+}
+
+.trailer-btn:hover, .watch-btn:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.favorite {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.favorite:hover {
+    background-color: #ff4444; /* Warna lebih terang saat hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #F6B17A, #7077A1);
+    color: white;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1200px) {
+    .movie {
+        width: calc(33.33% - 20px); /* 3 film dalam 1 baris */
+    }
+}
+
+@media (max-width: 800px) {
+    .movie {
+        width: calc(50% - 20px); /* 2 film dalam 1 baris */
+    }
+}
+
+@media (max-width: 600px) {
+    .movie {
+        width: 100%; /* Film memenuhi lebar pada layar kecil */
+    }
+
+    .movie-container {
+        flex-direction: column; /* Menumpuk film di layar kecil */
+        align-items: center; /* Pusatkan film */
+    }
+
+    input[type="text"] {
+        width: 85%;
+    }
+}

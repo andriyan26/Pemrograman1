@@ -1,0 +1,951 @@
+
+/*
+  Theme Name: Folio
+  Theme URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
+  Author: BootstrapMade.com
+  Author URL: https://bootstrapmade.com
+*/
+
+/*  General Styling
+/*-----------------------------------------------------------------------------------*/
+
+body {
+  background: #ffffff;
+  color: #898989;
+  font-family: 'Poppins', helvetica;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h2 {
+  color: #292929;
+  font-weight: 600;
+}
+
+h4 {
+  color: #292929;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+a {
+  color: #292929;
+  text-decoration: none !important;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+a:hover {
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+a:hover, a:focus {
+  color: #b8a07e;
+  text-decoration: underline;
+}
+
+nav ul li a {
+  padding: 2px 0 0 0;
+  position: relative;
+  display: block;
+  font-size: 12px;
+  color: #999999;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  line-height: 14px;
+  text-transform: uppercase;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+p {
+  margin: 25px 0;
+  padding: 0;
+  font-size: 15px;
+  color: #999999;
+  line-height: 28px;
+}
+
+::-moz-selection {
+  background: #b8a07e;
+  color: #fff;
+}
+
+::selection {
+  background: #b8a07e;
+  color: #fff;
+}
+
+.btn {
+  background: #333;
+  border: medium none;
+  border-radius: 0;
+  color: #fff;
+  font-size: 12px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 30px;
+  text-transform: uppercase;
+}
+
+.btn:hover, .btn:focus {
+  color: #fff;
+}
+
+.padDiv {
+  padding: 30px 20px;
+}
+
+.section-title {
+  margin-bottom: 70px;
+}
+
+.section-title h2 {
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.form-control {
+  background-color: transparent;
+  border: 1px solid #999;
+  border-radius: 0;
+  color: #999999;
+  font-size: 12px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: 0.1em;
+  padding-left: 10px;
+  margin: 0 0 25px 0;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  outline: 0 none;
+}
+
+.paddsection {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.paddsections {
+  padding-top: 90px;
+  padding-bottom: 90px !important;
+}
+
+.hvr-shutter-in-horizontal::before {
+  background: #333;
+}
+
+.hvr-shutter-in-horizontal:hover {
+  background: #b8a07e;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Navbar Top
+/*-----------------------------------------------------------------------------------*/
+
+nav {
+  position: fixed;
+  background: #fff;
+  z-index: 1000;
+  width: 100%;
+  padding: 20px;
+  display: none;
+  -webkit-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.18);
+}
+
+.nav-menu {
+  float: right;
+  line-height: 32px;
+  margin-bottom: 0;
+  padding-top: 16px;
+}
+
+nav ul li {
+  float: left;
+  margin-right: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  margin-left: 40px;
+}
+
+nav ul li a {
+  padding: 2px 0 0 0;
+  position: relative;
+  display: block;
+  font-size: 14px;
+  color: #999999;
+  font-family: 'Poppins', helvetica;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.logo {
+  float: left;
+}
+
+.logo img {
+  width: 100px;
+  height: 50px;
+}
+
+.responsive {
+  display: none;
+  font-size: 23px;
+}
+
+.active {
+  color: #afafaf;
+}
+
+/*----------------------------------------------------------------------------------*/
+/*  Header
+/*-----------------------------------------------------------------------------------*/
+
+#header {
+  background: url("../gambar/backgroud4.jpg") repeat scroll center center / cover;
+  height: 100vh;
+  width: 100%;
+
+}
+
+#header .header-content {
+  height: 100vh;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-content h1 {
+  font-size: clamp(28px, 5vw, 40px); /* Ukuran antara 28px hingga 40px */
+  font-weight: 800;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  text-transform: uppercase;
+  color: #f7f7f7;
+}
+
+.header-content h2 {
+  font-size: 20px; /* Ukuran antara 20px hingga 30px */
+  font-weight: 300;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.header-content p {
+  font-size: 20px; /* Ukuran antara 16px hingga 22px */
+  letter-spacing: 2px; /* Dikurangi sedikit agar rapi di layar kecil */
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 200;
+}
+
+/* Penyesuaian lebih lanjut untuk layar kecil */
+@media (max-width: 768px) {
+  .header-content {
+    text-align: center; /* Biar teks terlihat lebih rapi di layar kecil */
+    padding: 10px;
+  }
+
+  .header-content p {
+    letter-spacing: 1px; /* Kurangi jarak huruf untuk ponsel */
+  }
+}
+
+.header-content .list-social li {
+  float: left;
+  margin-right: 20px;
+}
+
+.header-content .list-social li i {
+  color: #fff;
+  font-size: 15px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Aout-us
+/*-----------------------------------------------------------------------------------*/
+
+#about {
+  width: 100%;
+  height: auto;
+  color: white; /* Warna teks putih */
+  padding-top: 190px;
+  background-color: #fff;
+}
+
+#about .div-img-bg {
+  padding-bottom: 30px;
+  border: 20px solid #06187e;
+  background: url(../gambar/background.jpg);
+}
+
+#about .div-img-bg .about-img img {
+  width: 100%;
+  box-shadow: 0px 0px 85px 0px rgba(0, 0, 0, 0.14);
+  margin-top: -60px;
+  margin-left: 40px;
+  height: 400px;
+  object-fit: cover;
+}
+
+#about .about-descr .p-heading {
+  color: black; /* Warna teks putih */
+  font-family: 'Poppins', sans-serif; /* Font modern dan elegan */
+  font-weight: 600; /* Tebal huruf sedang */
+  font-size: 24px; /* Ukuran font besar */
+  letter-spacing: 1px; /* Jarak antar huruf */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+  line-height: 1.5; /* Jarak antar baris */
+  text-align: center; /* Teks rata tengah */
+  background-color: #fff;
+}
+
+
+#about .about-descr .separator {
+  color: black; /* Warna teks putih */
+  font-family: 'Poppins', sans-serif; /* Font modern */
+  font-weight: 500; /* Tidak terlalu tebal */
+  font-size: 18px; /* Ukuran font lebih kecil */
+  letter-spacing: 0.8px; /* Sedikit lebih rapat */
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.1), 
+               2px 2px 6px rgba(0, 0, 0, 0.4); /* Bayangan lebih halus */
+  line-height: 1.6; /* Jarak antar baris lebih nyaman */
+  text-align: center; /* Rata tengah */
+  transition: transform 0.3s ease, color 0.3s ease; /* Animasi halus */
+  background-color: #f7f7f7;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*  Project
+/*-----------------------------------------------------------------------------------*/
+
+#portfolio {
+  position: relative;
+  padding-bottom: 50px;
+}
+#portfolio .portfolio-list {
+  margin-bottom: 50px;
+}
+
+#portfolio .portfolio-list .nav {
+  display: inline-block;
+  margin: 0;
+}
+
+#portfolio .portfolio-list .nav li {
+  margin: 0 40px 0 0;
+  float: left;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+  cursor: pointer;
+  font-family: 'Poppins', helvetica;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#portfolio .portfolio-list .nav li:hover, #portfolio .portfolio-list .nav li.filter-active  {
+  color: #b8a07e;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#portfolio .portfolio-container {
+  display: inline-block;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.portfolio-thumbnail {
+  margin-bottom: 30px;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+.portfolio-thumbnail img {
+  max-width: 100%;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  portfolio
+/*-----------------------------------------------------------------------------------*/
+
+#Portfolio,  #Portfolio-blog {
+  height: auto;
+  width: 100%;
+  background-color: #001F3F;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+#Portfolio-blog {
+  background: #fff;
+  padding-bottom: 30px;
+}
+
+#Portfolio .Portfolio-block {
+  display: inline-block;
+  height: auto;
+  width: 100%;
+}
+
+#Portfolio .Portfolio-block .Portfolio-info {
+  position: relative;
+}
+
+.Portfolio-block .Portfolio-info img {
+  max-width: 100%;
+}
+
+.Portfolio-block .Portfolio-info .Portfolio-txt {
+  padding: 25px 0px;
+  position: relative;
+}
+@keyframes blink {
+  0%, 100% {
+    color: #ffcc00; /* Warna saat tidak kedap-kedip */
+  }
+  50% {
+    color: #ffffff; /* Warna saat kedap-kedip */
+  }
+}
+
+#Portfolio .section-title {
+  display: flex; /* Menggunakan flexbox */
+  justify-content: center; /* Memastikan isi di tengah secara horizontal */
+  align-items: center; /* Memastikan isi di tengah secara vertikal */
+  flex-direction: column; /* Mengatur arah kolom */
+}
+
+#Portfolio .section-title h2 {
+  font-size: 2.5rem; /* Ukuran teks responsif */
+  font-weight: 700; /* Berat font yang lebih berani */
+  letter-spacing: 2px; /* Jarak antar huruf lebih lebar */
+  margin-bottom: 5px; /* Margin bawah lebih dekat */
+  text-align: center; /* Posisikan teks di tengah */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Bayangan lebih jelas */
+  padding: 20px; /* Ruang dalam untuk tampilan lebih lega */
+  animation: blink 1s infinite; /* Animasi kedap-kedip */
+}
+
+.Portfolio-block .Portfolio-info .Portfolio-txt h4 a {
+  display: block;
+  font-size: 19px;
+  line-height: 24px;
+  margin: 0 0 13px 0;
+  font-weight: 500;
+  color: #fff;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+  text-align: center;
+}
+
+.Portfolio-block .Portfolio-info .Portfolio-txt h4 a:hover {
+  color: #b8a07e;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.Portfolio-block .Portfolio-info .Portfolio-txt p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: justify; /* Untuk meratakan teks */
+  color: black;
+}
+@keyframes glow {
+  0% {
+    border-color: #3B1E54; /* Warna border awal */
+    box-shadow: 0 0 5px #3B1E54; /* Bayangan awal */
+  }
+  50% {
+    border-color: #fff; /* Warna border saat menyala */
+    box-shadow: 0 0 20px #fff, 0 0 30px #fff; /* Bayangan saat menyala */
+  }
+  100% {
+    border-color: #3B1E54; /* Kembali ke warna border awal */
+    box-shadow: 0 0 5px #3B1E54; /* Kembali ke bayangan awal */
+  }
+}
+
+.Portfolio-info img {
+  width: 100%; /* Agar gambar responsif */
+  border: 5px solid #3B1E54; /* Warna border */
+  border-radius: 15px; /* Membuat sudut border membulat */
+  box-shadow: 0 4px 20px rgba(255, 102, 0, 0.5); /* Bayangan yang lebih berwarna */
+  transition: transform 0.3s; /* Transisi saat hover */
+  animation: glow 1.5s infinite; /* Animasi menyala */
+}
+
+.Portfolio-info img:hover {
+  transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*  Contact
+/*-----------------------------------------------------------------------------------*/
+
+#contact {
+  height: auto;
+  width: 100%;
+}
+
+.contact-details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-details li {
+  padding-bottom: 10px;
+}
+
+#contact input, #contact textarea {
+  width: 100%;
+}
+
+
+#contact  #sendmessage {
+  color: #18d26e;
+  border: 1px solid #18d26e;
+  display: none;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin: 15px;
+}
+
+#contact  #errormessage {
+  color: red;
+  display: none;
+  border: 1px solid red;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin: 15px;
+}
+
+#contact #sendmessage.show, #contact #errormessage.show, #contact .show {
+  display: block;
+}
+
+#contact .validation {
+  color: red;
+  display: none;
+  margin: 0 0 20px;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Footer
+/*-----------------------------------------------------------------------------------*/
+
+#footer {
+  background: #f7f7f7;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#footer .socials-media {
+  width: 100%;
+}
+
+#footer .socials-media ul {
+  display: inline-block;
+  float: none;
+  margin: 0 0 20px 0;
+}
+
+#footer .socials-media ul li {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#footer .socials-media ul li a {
+  font-size: 24px;
+  color: #999;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  background: transparent;
+  text-transform: uppercase;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#footer .socials-media ul li a:hover {
+  color: #b8a07e;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#footer p {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.credits {
+  font-size: 13px;
+}
+
+/* Container menggunakan flex agar konten dan gambar bisa berdampingan */
+.container {
+  display: flex;
+  justify-content: flex-start; /* Konten bergeser sedikit ke kiri */
+  align-items: center;
+  flex-wrap: wrap; /* Agar layout tidak pecah di layar kecil */
+  gap: 40px; /* Jarak antara konten dan gambar */
+  padding: 30px; /* Tambah padding biar lebih rapi */
+}
+
+/* Styling untuk konten di sebelah kiri */
+.header-content {
+  flex: 1; /* Isi ruang yang tersedia */
+  max-width: 100%; /* Maksimal 50% lebar layar */
+  min-width: 300px; /* Agar tidak terlalu kecil di layar sempit */
+  padding-right: 10px; /* Sedikit jarak di kanan */
+}
+
+/* Styling untuk gambar di sebelah kanan */
+.image-container {
+  flex: 1; /* Isi ruang yang tersedia */
+  max-width: 40%; /* Maksimal 45% lebar layar */
+  display: flex;
+  justify-content: flex-start; /* Geser gambar sedikit ke kiri */
+  align-items: center;
+}
+
+/* Styling untuk gambar agar responsif */
+.profile-image {
+  width: 100%; /* Gambar mengikuti ukuran container */
+  max-width: 300px; /* Maksimal ukuran gambar */
+  height: auto; /* Agar proporsi gambar tetap */
+  border-radius: 15px; /* Sudut melengkung */
+  object-fit: cover; /* Sesuaikan gambar dengan frame */
+  transition: transform 0.3s ease; /* Animasi saat hover */
+}
+
+/* Efek zoom saat gambar di-hover */
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+/* Media Queries untuk layar kecil (ponsel) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Konten dan gambar bertumpuk */
+    align-items: center; /* Pusatkan konten di layar kecil */
+  }
+
+  .header-content, .image-container {
+    max-width: 100%; /* Lebar penuh di layar kecil */
+    text-align: center; /* Pusatkan teks di layar kecil */
+  }
+
+  .profile-image {
+    max-width: 170px; /* Kurangi ukuran gambar di layar kecil */
+  }
+
+}
+
+/* Gaya umum untuk section diagram belajar */
+.paddsection {
+  padding: 40px 20px; /* Atur padding atas dan bawah serta samping */
+  border-radius: 10px; /* Sudut melengkung */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  margin-bottom: 40px; /* Jarak bawah untuk pemisah */
+}
+
+/* Gaya untuk kontainer diagram */
+.chart-container {
+  text-align: center; /* Pusatkan konten di dalam kontainer */
+  margin-top: 20px; /* Jarak atas untuk kontainer */
+}
+
+/* Gaya untuk canvas */
+#learningChart {
+  max-width: 100%; /* Pastikan canvas tidak lebih lebar dari kontainer */
+  height: auto; /* Mengatur tinggi secara otomatis */
+  border: 2px solid #007BFF; /* Tambahkan border */
+  border-radius: 8px; /* Sudut canvas melengkung */
+  background-image: url(../gambar/Tekan1.png);
+}
+
+/* Gaya untuk gambar */
+.responsive-image {
+  max-width: 80%; /* Maksimal lebar gambar adalah 80% dari kontainer */
+  height: auto; /* Tinggi otomatis untuk menjaga aspek rasio */
+  border-radius: 8px; /* Sudut gambar melengkung */
+  margin-top: 20px; /* Jarak atas untuk gambar */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan pada gambar */
+}
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+  .responsive-image {
+    max-width: 100%; /* Gambar penuh lebar pada perangkat kecil */
+  }
+}
+
+/* Styling untuk bagian Sertifikat */
+#Sertifikat {
+  background-color: #fff; /* Warna gelap untuk latar belakang */
+  padding: 50px 0;
+  color: white;
+}
+
+#Sertifikat .section-title h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0 auto 30px auto; /* Memastikan judul berada di tengah */
+  text-align: center; /* Judul berada di tengah */
+}
+
+#Sertifikat .container {
+  width: 100%;
+  max-width: 1200px; /* Maksimal lebar container */
+  padding: 0 15px;
+}
+
+/* Kotak Sertifikat */
+.Sertifikat-info {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  background-color: #444444; /* Warna gelap yang lebih lembut */
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  height: 100%; /* Memastikan tinggi kotak selalu konsisten */
+}
+
+.Sertifikat-info:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  border-color: #4c9eff;
+}
+
+/* Border menyala yang lembut */
+.Sertifikat-info::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(45deg, rgba(76, 158, 255, 0.6), rgba(255, 102, 102, 0.6), rgba(76, 158, 255, 0.6), rgba(255, 102, 102, 0.6));
+  background-size: 400% 400%;
+  animation: borderGlow 3s ease-in-out infinite;
+  border-radius: 15px;
+  z-index: -1;
+}
+
+@keyframes borderGlow {
+  0% {
+    background-position: 400% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 400% 0%;
+  }
+}
+
+/* Gambar Sertifikat responsif */
+.Sertifikat-info img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #ffffff;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.Sertifikat-info img:hover {
+  transform: scale(1.1);
+}
+
+/* Styling teks pada sertifikat */
+.Sertifikat-txt {
+  padding: 20px;
+  text-align: center;
+}
+
+.Sertifikat-txt h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.Sertifikat-txt a {
+  color: #4c9eff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.Sertifikat-txt a:hover {
+  color: #ff8c00;
+  text-decoration: underline;
+}
+
+.Sertifikat-txt .separator {
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+/* Responsif */
+@media (max-width: 1200px) {
+  .Sertifikat-info {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .Sertifikat-info {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Sertifikat-info {
+    margin-bottom: 15px;
+  }
+  .Sertifikat-info {
+    height: 100%; /* Kotak sertifikat tidak berubah ukuran */
+  }
+}
+
+@media (max-width: 576px) {
+  #Sertifikat .section-title h2 {
+    font-size: 28px;
+  }
+
+  .Sertifikat-info {
+    margin-bottom: 10px;
+  }
+
+  /* Mengatur lebar kolom pada perangkat mobile */
+  .Sertifikat-info {
+    height: 100%; /* Kotak tetap responsif */
+  }
+}
+
+/* Mengatur lebar dan ukuran kotak sertifikat agar seragam */
+.Sertifikat-info {
+  width: 100%; /* Lebar penuh pada layar besar */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-buttons {
+  margin: 20px 0;
+  text-align: center;
+}
+.filter-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+.filter-buttons button:hover {
+  background-color: #ddd;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hidden {
+  display: none;
+}

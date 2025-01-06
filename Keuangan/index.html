@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Catatan Keuangan Pribadi</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="40" height="40">
+                <path fill="currentColor" d=""/>
+                <path fill="currentColor" d=""/>
+            </svg>
+            <h1>Catatan Keuangan Pribadi</h1>
+        </div>
+        <button class="toggle-dark-mode" onclick="toggleDarkMode()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="30" height="30">
+                <path fill="currentColor" d="M12 1.5a10.5 10.5 0 108.547 17.878A6.5 6.5 0 0018 12a6.5 6.5 0 00-6-6.5V1.5z"/>
+            </svg>
+        </button>
+    </header>
+    
+    <main>
+        <section class="form-section">
+            <h2>Tambah Transaksi</h2>
+            <form id="transaksiForm">
+                <input type="text" id="deskripsi" placeholder="Deskripsi" required />
+                <input type="number" id="jumlah" placeholder="Jumlah" required />
+                <select id="kategori">
+                    <option value="pemasukan">Pemasukan</option>
+                    <option value="pengeluaran">Pengeluaran</option>
+                </select>
+                <select id="kategoriPengeluaran">
+                    <option value="">Pilih Kategori Pengeluaran</option>
+                    <option value="makanan">Makanan</option>
+                    <option value="transportasi">Transportasi</option>
+                    <option value="hiburan">Hiburan</option>
+                    <option value="lainnya">Lainnya</option>
+                </select>
+                <button type="submit">Tambah</button>
+            </form>
+        </section>
+
+        <section class="summary-section">
+            <h2>Ringkasan Bulanan</h2>
+            <div class="summary-box">
+                <div>
+                    <h3>Total Pemasukan</h3>
+                    <p id="totalPemasukan">Rp 0</p>
+                </div>
+                <div>
+                    <h3>Total Pengeluaran</h3>
+                    <p id="totalPengeluaran">Rp 0</p>
+                </div>
+                <div>
+                    <h3>Sisa Saldo</h3>
+                    <p id="sisaSaldo">Rp 0</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2>Grafik Saldo Harian</h2>
+            <canvas id="saldoChart"></canvas>
+        </section>
+        
+        <section class="export-section">
+            <button onclick="exportToCSV()">Ekspor ke CSV</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>©ANDRIAN</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

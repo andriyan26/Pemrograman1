@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Time</h1>
+        <input type="text" id="searchInput" placeholder="Cari film..." />
+        <button id="searchButton">Cari</button>
+        <button id="showFavoritesButton">Favorit</button>
+    </header>
+    <main>
+        <div class="filter-container">
+            <select id="categoryFilter">
+                <option value="all">Semua Kategori</option>
+                <option value="action">Aksi</option>
+                <option value="drama">Drama</option>
+                <option value="comedy">Komedi</option>
+                <option value="horror">Horor</option>
+                <option value="romance">Romansa</option>
+            </select>
+        </div>
+        <div class="movie-container" id="movieContainer"></div>
+    </main>
+    <footer>
+        <p>&copy;andrian</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

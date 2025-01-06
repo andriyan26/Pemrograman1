@@ -1,0 +1,106 @@
+<!doctype html>
+  <meta charset=utf-8>
+  <title>Tetris Game</title>
+  <link rel=stylesheet href=style.css>
+<!--<canvas id=bg></canvas>-->
+<video id=bg src=bg.webm loop autoplay></video>
+<div id=content>
+
+  <!-- Canvases -->
+  <div id="d">
+    <h3>Tahan</h3>
+  
+    <div id="a">
+      <canvas id="hold"></canvas>
+    </div>
+    
+    <ul id="replay" style="display:none">
+      <li><a onclick="replay(-1)">sebelumnya</a>
+      <li><a onclick="replay()">Putar/Jeda</a>
+      <li><a onclick="replay(1)">berikutnya</a>
+    </ul>
+  
+    <table id="stats">
+      <tr><td id="line">0<th>Baris
+      <tr><td id="piece">0<th>Potongan
+      <tr><th id="time">00:00.00
+    </table>
+  </div>
+
+  <div id=b>
+    <canvas id=bgStack></canvas>
+    <canvas id=stack></canvas>
+    <canvas id=active></canvas>
+
+    <p id=msg>
+
+    <nav class='menu on'>
+      <h1>TETRIS</h1>
+      <ul>
+        <li><a onclick="init(0)">Play Easy</a>
+        <!--<li><a onclick="init(1)">Mainkan Marathon</a>
+        <li><a onclick="init(2)">Mainkan Ultra</a>-->
+        <li><a onclick="init(3)">Play Hard</a>
+        <li><a onclick="menu(2)"><i class=""></i>Kontrol</a>
+        <li><a onclick="menu(1)"><i class="icon-cog"></i>Pengaturan</a>
+      </ul>      
+    </nav>
+
+    <div class="menu">
+      <h2>Pengaturan</h2>
+      <div id="settings">
+      </div>
+      <div style="clear:both"><a class="button" onclick="menu(0)">Selesai</a></div>
+    </div>
+    
+    <div class=menu>
+      <h2>Kontrol</h2>
+      <p>Klik pada kontrol yang ingin Anda ubah, lalu tekan tombol apa saja.</p>      
+        <table id="controls">
+          <tr> <th>Gerak Kiri:     <td id="moveLeft">←
+          <tr> <th>Gerak Kanan:    <td id="moveRight">→
+          <tr> <th>Gerak Turun:    <td id="moveDown">↓
+          <tr> <th>Jatuhkan Cepat: <td id="hardDrop">Spasi
+          <tr> <th>Tahan:          <td id="holdPiece">C
+          <tr> <th>Putar Kanan:    <td id="rotRight">X
+          <tr> <th>Putar Kiri:     <td id="rotLeft">Z
+          <tr> <th>Putar 180°:     <td id="rot180">Shift
+          <tr> <th>Coba Lagi:      <td id="retry">R
+          <tr> <th>Jeda:           <td id="pause">Esc
+        </table>        
+      <div style=clear:both><a class=button onclick=menu(0)>Selesai</a></div>
+    </div>
+
+    <nav id=go class=menu>
+      <ul>
+        <li><a onclick="init(gametype)">Coba Lagi</a></li>
+        <li><a onclick="init(replay)">Tonton Ulang</a></li>
+        <li><a onclick="menu(0)">Menu Utama</a></li>
+      </ul>      
+    </nav>
+
+    <nav id=pause class=menu>
+      <ul>
+        <li><a onclick="unpause()">Kembali</a></li>
+        <li><a onclick="init(gametype)">Coba Lagi</a></li>
+        <li><a onclick="menu(0)">Menu Utama</a></li>
+      </ul>
+    </nav>      
+  </div>
+
+  <div id=c>
+    <h3>Lanjut</h3>
+    <canvas id=preview></canvas>
+  </div>
+
+</div>
+
+<canvas id=sprite></canvas>
+<script src=tetris.js></script>
+<script src=piece.js></script>
+<script src=stack.js></script>
+<script src=hold.js></script>
+<script src=preview.js></script>
+<script src=menu.js></script>
+<script src=bg.js></script>
+<script>_gaq=[['_setAccount','UA-30472693-1'],['_trackPageview']];(function(d){var g=d.createElement('script'),s=d.scripts[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)})(document)</script>

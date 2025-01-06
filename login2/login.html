@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="">
+            <h1>Login</h1>
+            <div class="inputbox">
+                <input type="text" id="username" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="inputbox">
+                <input type="password" id="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            
+            <div class="remember-forgot">
+                <label> 
+                    <input type="checkbox"> Remember me 
+                </label>
+                <a href="#">Forgot password? </a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+
+            <div class="register-link">
+                <p>Don't have an account?
+                    <a href="#">Register</a>
+                </p>
+            </div>
+
+            <!-- Tambahkan logo media sosial di sini -->
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <i class='bx bxl-twitter'></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <i class='bx bxl-youtube'></i>
+                </a>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginButton = document.querySelector('.btn');
+
+        // Menyimpan data login yang valid dalam objek
+        const validCredentials = {
+            username: "admin", // Ganti dengan username yang valid
+            password: "12345"  // Ganti dengan password yang valid
+        };
+
+        // Menghapus placeholder saat fokus
+        usernameInput.addEventListener('focus', function() {
+            this.setAttribute('placeholder', '');
+        });
+
+        usernameInput.addEventListener('blur', function() {
+            if (this.value === '') {
+                this.setAttribute('placeholder', 'Username');
+            }
+        });
+
+        passwordInput.addEventListener('focus', function() {
+            this.setAttribute('placeholder', '');
+        });
+
+        passwordInput.addEventListener('blur', function() {
+            if (this.value === '') {
+                this.setAttribute('placeholder', 'Password');
+            }
+        });
+
+        // Event listener untuk tombol login
+        loginButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            // Memeriksa apakah username dan password benar
+            if (username === validCredentials.username && password === validCredentials.password) {
+                alert('Login berhasil!');
+                // Redirect atau lakukan sesuatu setelah login berhasil
+            } else {
+                alert('Username atau password salah!');
+            }
+        });
+    </script>
+</body>
+</html>

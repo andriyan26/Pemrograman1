@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    padding: 30px;
+    background: linear-gradient(to right, #F7E6C4, #FFF4F4);
+    border-radius: 15px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b, #6a11cb, #2575fc);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 5s infinite linear, textBounce 2s infinite ease-in-out;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    white-space: nowrap; /* Agar teks tidak terpotong */
+    overflow: hidden; /* Hindari teks keluar */
+}
+
+/* Animasi untuk pergerakan gradasi */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+h2 {
+    font-size: 2em;
+    margin: 20px 0 10px;
+    border-bottom: 2px solid #ff7e5f;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: black;
+}
+
+p {
+    font-size: 1.2em; /* Ukuran teks agar mudah dibaca */
+    line-height: 1.6; /* Spasi antar baris agar lebih nyaman dibaca */
+    margin: 10px 0; /* Ruang di atas dan bawah paragraf */
+    color: #34495e; /* Warna teks netral */
+    text-align: justify; /* Rata kanan dan kiri */
+    padding: 15px; /* Tambahan ruang di dalam paragraf */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    transition: background 0.3s, transform 0.2s; /* Efek transisi */
+    text-align: center;
+}
+
+/* Animasi hover untuk paragraf */
+p:hover {
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    transform: scale(1.02); /* Sedikit perbesar saat hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Pertegas bayangan */
+}
+
+/* CSS untuk list mata kuliah */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.2s;
+    position: relative;
+    font-size: 1.1em;
+    overflow: hidden; /* Menghindari elemen keluar dari box */
+    animation: glow 1s infinite alternate; /* Animasi kedap-kedip */
+}
+
+/* Animasi kedap-kedip */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+
+/* Variasi warna pada nama mata kuliah */
+ul li:nth-child(odd) {
+    background: linear-gradient(to right, #A1CCD1, #F4F2DE);
+}
+ul li:nth-child(even) {
+    background: linear-gradient(to right, #E9B384, #7C9D96);
+}
+
+ul li:hover {
+    background: linear-gradient(to right, #EAB2A0, #A76F6F);
+    transform: scale(1.02);
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background-color: #ff7e5f;
+    border-radius: 5px;
+}
+
+canvas {
+    max-width: 100%;
+    margin: 30px auto 0;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+.footer a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Bikin logo jadi lebih menarik */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Tambah bayangan */
+    transition: transform 0.3s, box-shadow 0.3s;
+    object-fit: contain; /* Pastikan gambar tampil proporsional */
+    background-color: transparent; /* Hilangkan background */
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2)); /* Tambah shadow halus */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Zoom in saat di-hover */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); /* Tambah efek saat hover */
+}

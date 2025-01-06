@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('hidden');
+        }
+
+        function highlightMenu(menuItemId) {
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => item.classList.remove('bg-blue-500', 'text-white'));
+            const selectedItem = document.getElementById(menuItemId);
+            selectedItem.classList.add('bg-blue-500', 'text-white');
+        }
+
+        function showPage(pageId, menuItemId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+            highlightMenu(menuItemId);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('cetaklaporanPage', 'cetaklaporanMenu'); // Show dashboard by default
+        });
+    </script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white min-h-screen shadow-md flex flex-col justify-between" id="sidebar">
+            <div>
+                <div style="background-color: white; padding: 16px; display: flex; align-items: center;">
+                    <img alt="University Logo" class="w-10 h-10 mr-2" src="gambar/Unpam.png" />
+                    <h1 class="text-lg font-bold" style="color: blue;">UNIVERSITAS PAMULANG</h1>
+                </div> 
+                <div class="p-4">
+                    <!-- Avatar and welcome message -->
+                    <div class="flex items-center mb-4">
+                        <img alt="User Avatar" class="w-10 h-10 rounded-full mr-2" src="gambar/Foto4.jpg" />
+                        <div>
+                            <p class="font-semibold">Welcome, Andrian</p>
+                            <p class="text-sm text-gray-500">Administrator</p>
+                        </div>
+                    </div>
+                    <!-- Navigation menu -->
+                    <nav class="bg-white p-4 rounded-lg shadow-lg">
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="dashboardMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="dashboard.html" onclick="showPage('dashboardPage', 'dashboardMenu')">
+                                    <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                    
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU KARYAWAN</p>
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="karyawanMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="karyawan.html" onclick="showPage('karyawanPage', 'karyawanMenu')">
+                                    <i class="fas fa-users mr-2"></i> Karyawan
+                                </a>
+                            </li>
+                            <li>
+                                <a id="jabatanMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="jabatan.html" onclick="showPage('jabatanPage', 'jabatanMenu')">
+                                    <i class="fas fa-briefcase mr-2"></i> Jabatan
+                                </a>
+                            </li>
+                            <li>
+                                <a id="divisiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="divisi.html" onclick="showPage('divisiPage', 'divisiMenu')">
+                                    <i class="fas fa-building mr-2"></i> Divisi
+                                </a>
+                            </li>
+                        </ul>
+                    
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU ABSENSI</p>
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="absensiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="absensi.html" onclick="showPage('absensiPage', 'absensiMenu')">
+                                    <i class="fas fa-users mr-2"></i> Absensi
+                                </a>
+                            </li>
+                            <li>
+                                <a id="izinMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="izin.html" onclick="showPage('izinPage', 'izinMenu')">
+                                    <i class="fas fa-briefcase mr-2"></i> Izin
+                                </a>
+                            </li>
+                            <li>
+                                <a id="lemburMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="lembur.html" onclick="showPage('lemburPage', 'lemburMenu')">
+                                    <i class="fas fa-building mr-2"></i> Lembur
+                                </a>
+                            </li>
+                        </ul>
+                    
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU PENGGAJIAN</p>
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="slipgajiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="slipgaji.html" onclick="showPage('slipgajiPage', 'slipgajiMenu')">
+                                    <i class="fas fa-users mr-2"></i> Slip Gaji
+                                </a>
+                            </li>
+                            <li>
+                                <a id="cetakgajiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="cetakgaji.html" onclick="showPage('cetakgajiPage', 'cetakgajiMenu')">
+                                    <i class="fas fa-briefcase mr-2"></i> Cetak Gaji
+                                </a>
+                            </li>
+                        </ul>
+                    
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU LAPORAN</p>
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="cetaklaporanMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="#" onclick="showPage('cetaklaporanPage', 'cetaklaporanMenu')">
+                                    <i class="fas fa-users mr-2"></i> Cetak Laporan
+                                </a>
+                            </li>
+                        </ul>
+                    
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU ADMIN</p>
+                        <ul class="space-y-2">
+                            <li>
+                                <a id="penggunaMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded" href="pengguna.html" onclick="showPage('penggunaPage', 'penggunaMenu')">
+                                    <i class="fas fa-users mr-2"></i> Pengguna
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div> 
+            <div class="p-4">
+                <button class="w-full bg-red-500 text-white p-2 rounded" onclick="window.location.href='keluar.html';">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                </button>
+            </div>
+        </div>
+       <!-- Main Content -->
+       <div class="flex-1">
+        <!-- Navbar -->
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <button class="bg-blue-500 text-white p-2 rounded" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="flex items-center">
+                <p class="mr-4">Welcome, Andrian</p>
+                <img alt="User Avatar" class="w-10 h-10 rounded-full" height="50"
+                     src="gambar/Foto4.jpg" width="50" />
+            </div>
+        </div>
+        
+             <!--   Cetak Laporan Page -->
+            <div id="cetaklaporanPage" class="flex-1 p-6 hidden">
+                <h2 style="width: 100%; padding: 5px; margin-top: 0px; background: linear-gradient(135deg, #6a11cb, #2575fc); color: white; text-align: left; font-size: 2.5em; font-weight: bold; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);">
+                </h2>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">Keterangan Cetak Laporan</h3>
+                        <a href="ubahcetaklaporan.html" class="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center hover:bg-blue-600 transition duration-200" target="_self">
+                            <i class="fas fa-plus mr-2"></i>Ubah Status
+                        </a>
+                    </div>
+                    <!-- Filter untuk Entries dan Search -->
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center">
+                            <label class="mr-2" for="entries">Show</label>
+                            <select class="border border-gray-300 rounded p-2" id="entries">
+                                <option>10</option>
+                                <option>25</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                            <span class="ml-2">entries</span>
+                        </div>
+                        <div class="ml-auto">
+                            <label class="mr-2" for="search">Search:</label>
+                            <input class="border border-gray-300 rounded p-2" id="search" type="text"/>
+                        </div>
+                    </div>
+                    <table class="min-w-full bg-white border">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama Karyawan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Jabatan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Tanggal Laporan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Tugas yang Diselesaikan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Status</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Keterangan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border">1</td>
+                                <td class="py-2 px-4 border">Ahmad Santoso</td>
+                                <td class="py-2 px-4 border">Manager</td>
+                                <td class="py-2 px-4 border">2024-11-01</td>
+                                <td class="py-2 px-4 border">Revisi laporan keuangan bulanan</td>
+                                <td class="py-2 px-4 border status-selesai">Selesai</td>
+                                <td class="py-2 px-4 border">Tepat waktu</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">2</td>
+                                <td class="py-2 px-4 border">Indah Pratiwi</td>
+                                <td class="py-2 px-4 border">Supervisor</td>
+                                <td class="py-2 px-4 border">2024-11-01</td>
+                                <td class="py-2 px-4 border">Update laporan proyek A</td>
+                                <td class="py-2 px-4 border status-selesai">Selesai</td>
+                                <td class="py-2 px-4 border">Butuh koreksi minor</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">3</td>
+                                <td class="py-2 px-4 border">Rizki Kurniawan</td>
+                                <td class="py-2 px-4 border">Staff</td>
+                                <td class="py-2 px-4 border">2024-11-01</td>
+                                <td class="py-2 px-4 border">Input data pelanggan baru</td>
+                                <td class="py-2 px-4 border status-proses">Proses</td>
+                                <td class="py-2 px-4 border">70% selesai</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">4</td>
+                                <td class="py-2 px-4 border">Siti Nurhaliza</td>
+                                <td class="py-2 px-4 border">Admin</td>
+                                <td class="py-2 px-4 border">2024-11-01</td>
+                                <td class="py-2 px-4 border">Arsip dokumen kontrak</td>
+                                <td class="py-2 px-4 border status-selesai">Selesai</td>
+                                <td class="py-2 px-4 border">Tidak ada catatan</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">5</td>
+                                <td class="py-2 px-4 border">Budi Hartono</td>
+                                <td class="py-2 px-4 border">IT Support</td>
+                                <td class="py-2 px-4 border">2024-11-01</td>
+                                <td class="py-2 px-4 border">Pemeliharaan sistem jaringan</td>
+                                <td class="py-2 px-4 border status-proses">Proses</td>
+                                <td class="py-2 px-4 border">Butuh penggantian perangkat</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">6</td>
+                                <td class="py-2 px-4 border">Rahma Sari</td>
+                                <td class="py-2 px-4 border">HR</td>
+                                <td class="py-2 px-4 border">2024-11-01</td>
+                                <td class="py-2 px-4 border">Evaluasi kinerja karyawan</td>
+                                <td class="py-2 px-4 border status-selesai">Selesai</td>
+                                <td class="py-2 px-4 border">Tidak ada catatan</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">7</td>
+                                <td class="py-2 px-4 border">Andi Wijaya</td>
+                                <td class="py-2 px-4 border">Marketing</td>
+                                <td class="py-2 px-4 border">2024-11-01</td>
+                                <td class="py-2 px-4 border">Update data prospek klien</td>
+                                <td class="py-2 px-4 border status-proses">Proses</td>
+                                <td class="py-2 px-4 border">Masih menunggu data</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">8</td>
+                                <td class="py-2 px-4 border">Desi Marlina</td>
+                                <td class="py-2 px-4 border">Customer Service</td>
+                                <td class="py-2 px-4 border">2024-11-01</td>
+                                <td class="py-2 px-4 border">Rekap aduan pelanggan</td>
+                                <td class="py-2 px-4 border status-selesai">Selesai</td>
+                                <td class="py-2 px-4 border">Penanganan selesai</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">9</td>
+                                <td class="py-2 px-4 border">Fajar Hidayat</td>
+                                <td class="py-2 px-4 border">Driver</td>
+                                <td class="py-2 px-4 border">2024-11-01</td>
+                                <td class="py-2 px-4 border">Pengiriman dokumen proyek B</td>
+                                <td class="py-2 px-4 border status-proses">Proses</td>
+                                <td class="py-2 px-4 border">Sedang dalam perjalanan</td>
+                            </tr>
+                        </tbody>
+                    </table>                                                                                                            
+                <!-- Navigasi Pagination -->
+                 <div class="flex justify-between items-center mt-4">
+                    <p>Showing 1 to 4 of 4 entries</p>
+                    <div class="flex items-center">
+                        <button class="px-3 py-1 border border-gray-300 rounded-l">Previous</button>
+                        <button class="px-3 py-1 border-t border-b border-gray-300">1</button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-r">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>            
+</body>
+</html>
